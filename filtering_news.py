@@ -9,12 +9,7 @@ def filtering():
             writer = csv.DictWriter(csvfile,fieldnames=["Truthiness", "url","Reference","Category"])
             
             for row in reader:
-                print row
-#                if row["Truthiness"] != "" or row["url"]!="":
-#            
-#                    writer.writerow(row)
-            
-        
+                print row       
 def merging():        
     with open("merged.csv",'wb') as csvfile:
             
@@ -23,7 +18,5 @@ def merging():
         df = pd.merge(df,dfi,how = 'outer', on = ["url", "url"])
         df.to_csv("merge.csv")
 
-######already executeed functions###########
-
 filtering()
-#merging()
+merging()
